@@ -4,8 +4,11 @@
 // Функція `arrayHandler` приймає аргументом значення з поточної ітерації масиву `array`
 
 export const arrayHandler = (num) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
+      if (typeof num === Number) {
+        reject('Error')
+      }
       resolve(num)
     }, num * 1000)
   })
@@ -13,4 +16,20 @@ export const arrayHandler = (num) => {
 
 const array = [1, 2, 3, 4, 5]
 
-console.log(array)
+let count = 0
+
+const iterateFunc = () => {
+  if (count < array.length) {
+    arrayHandler(array[count])
+      .then(res => {
+        console.log(res)
+        count++
+        iterateFunc()
+      })
+      .catch(rej => {
+        console.log(rej)
+      })
+  }
+}
+
+iterateFunc()

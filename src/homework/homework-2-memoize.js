@@ -4,8 +4,19 @@
 function sum (a, b) { return a + b } // for test
 
 // eslint-disable-next-line
-function memoize (fn) {
+function memoize(fn) {
   // fn ваш код тут...
+  const cache = new Map()
+
+  return (...args) => {
+    const someValue = JSON.stringify(args)
+
+    if (!cache.has(someValue)) {
+      cache.set(someValue, fn(...args))
+    }
+
+    return cache.get(someValue)
+  }
 }
 
 // приклад виконання вашого коду

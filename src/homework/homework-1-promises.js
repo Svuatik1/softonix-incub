@@ -6,15 +6,15 @@
 export const arrayHandler = (num) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (typeof num === Number) {
-        reject('Error')
+      if (typeof num !== 'number') {
+        reject('We have some problems')
       }
       resolve(num)
     }, num * 1000)
   })
 }
 
-const array = [1, 2, 3, 4, 5]
+const array = [1, 2, 3, 4, new Error(), 6]
 
 let count = 0
 

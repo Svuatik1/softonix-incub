@@ -1,5 +1,5 @@
 <template>
-  <Card>
+  <!-- <Card>
     <div class="flex">
       <div class="flex-grow text-sm truncate" @click.stop>
         <template v-if="editMode">
@@ -82,10 +82,13 @@
         </div>
       </div>
     </template>
-  </Card>
+  </Card> -->
+  <div />
 </template>
 
 <script lang="ts" setup>
+import JobOpenings from '@/_homework/JobOpenings.vue'
+
 const props = defineProps<{
   contact: IContact
 }>()

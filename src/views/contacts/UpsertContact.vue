@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <!-- <div class="flex justify-center">
     <Card :title="cardTitle" class="w-[350px]">
       <div class="space-y-4">
         <AppInput v-model.trim="contactForm.name" placeholder="Name" />
@@ -29,7 +29,8 @@
         </div>
       </template>
     </Card>
-  </div>
+  </div> -->
+  <div />
 </template>
 
 <script lang="ts" setup>

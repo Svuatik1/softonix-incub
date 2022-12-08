@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center gap-4">
+  <!-- <div class="flex items-center gap-4">
     <h3 class="font-medium m-0">Contact list</h3>
 
     <AppButton @click="createNewContact">
@@ -20,9 +20,12 @@
       @delete="deleteContact"
       @save="updateContact"
     />
-  </div>
+  </div> -->
+  <JobOpenings />
 </template>
 <script lang="ts" setup>
+import JobOpenings from '@/_homework/JobOpenings.vue'
+
 const { $routeNames } = useGlobalProperties()
 
 const router = useRouter()

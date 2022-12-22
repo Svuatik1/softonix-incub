@@ -6,7 +6,7 @@
 
         <AppInput v-model.trim="contactForm.description" placeholder="Description" />
 
-        <AppInput v-model.trim="contactForm.image" placeholder="Image Link" />
+        <!--    <AppInput v-model.trim="contactForm.image" placeholder="Image Link" /> -->
       </div>
 
       <template #footer>
@@ -49,13 +49,11 @@ const contactForm = reactive<IContact>(currentContact.value
   : {
     id: contacts.length + 1,
     name: '',
-    description: '',
-    image: ''
+    description: ''
   })
 
 const isFormValid = computed(() => {
-  const { image, ...contact } = contactForm
-  return Object.values(contact).every(c => !!c)
+  return Object.values(contactForm).every(c => !!c)
 })
 
 function onDelete () {

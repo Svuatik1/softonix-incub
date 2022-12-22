@@ -12,16 +12,19 @@ export const useContactsStore = defineStore('contactsStore', () => {
 
   function addContact (contact: IContact) {
     contacts.value.push(contact)
+    return contactsService.addContact(contact)
   }
 
   function updateContact (contact: IContact) {
     const currentIndex = contacts.value.findIndex(c => c.id === contact.id)
     contacts.value[currentIndex] = { ...contact }
+    return contactsService.changeContact(contact)
   }
 
   function deleteContact (contact: IContact) {
     const currentIndex = contacts.value.findIndex(c => c.id === contact.id)
     contacts.value.splice(currentIndex, 1)
+    return contactsService.deleteContact(contact)
   }
 
   return {

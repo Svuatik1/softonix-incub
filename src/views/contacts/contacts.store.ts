@@ -12,6 +12,8 @@ export const useContactsStore = defineStore('contactsStore', () => {
 
   function addContact (contact: IContact) {
     contacts.value.push(contact)
+    delete contact.id
+    console.log(contact)
     return contactsService.addContact(contact)
   }
 
